@@ -7,14 +7,33 @@
 
 import UIKit
 
+// ForecastCell.swift
 class ForecastCell: UITableViewCell {
-    private let dateLabel = UILabel()
-    private let tempLabel = UILabel()
-    private let conditionLabel = UILabel()
+    private let dateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 16)
+        return label
+    }()
+    
+    private let tempLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 16)
+        return label
+    }()
+    
+    private let conditionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 16)
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        backgroundColor = .secondarySystemGroupedBackground // 系統群組背景色
     }
     
     required init?(coder: NSCoder) {
